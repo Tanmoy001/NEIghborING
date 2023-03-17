@@ -1,26 +1,51 @@
-import React from 'react'
+import React, { useEffect ,useState} from 'react'
 import './Header.css'
-import { AiOutlineSearch } from 'react-icons/ai';
-function Header() {
+import { TiWeatherPartlySunny } from 'react-icons/ti';
+import{getTempsData} from '../../api/weather'
+
+import {
+  Link
+} from "react-router-dom";
+
+
+function Header({coordinates}) {
+  const [temp,setTemp]=useState([])
+  const [timezone,settimezone]=useState([])
+  const [condition,setcondition]=useState([])
+  useEffect(()=>{
+    if(coordinates.lat!==1.5937){
+    console.log(coordinates,'from header')
+    getTempsData(coordinates.lat,coordinates.lng)
+    .then((data)=>{
+      console.log(data)
+      setcondition(data.currentConditions.conditions)
+      settimezone(data.timezone);
+      setTemp(data.currentConditions.temp);
+     
+    })
+  }
+  },[coordinates]);     
+   
   return (
     <div className='container Header_container'>
         <div className='header_position'>
-   
-            <h3>Travel Helper</h3>
-            <h4>Explore new places</h4>
-        
-        <div className='container search_bar'>
-            <div className='search_icon'>
-            <AiOutlineSearch/>
+            <div className='title'>
+            <h3>NEIghborING</h3>
             </div>
-            <div className="col">
-                <div className="inputBox textarea">
-                    <input type="text" className='search_text' placeholder='Search...'/>
-                    <span className="line"></span>
-                    
-                </div>
+          <div className='container options'>
+            <div className='option'>
+              <Link className="nav-link" to="/">Foods</Link>
+              <Link className="nav-link" to="/attractions">Attractions</Link>
             </div>
-         
+          <div className='weather'>
+            <div className='temp'>
+              <TiWeatherPartlySunny className='logo'/>
+              <p>{temp}°F</p>
+              </div>  
+
+              <p>{condition}</p>
+              <p>{timezone}</p>
+              </div>  
         </div>
         </div>
     </div>

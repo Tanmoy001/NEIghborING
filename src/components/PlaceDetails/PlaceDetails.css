@@ -1,0 +1,42 @@
+.placeDetails {
+    padding: 6px;
+}
+.placeDetails .card{
+background-color: aliceblue;
+border: 1px solid black;
+}
+.placeDetails .card .card-img-top{
+    padding: 10px;
+    border-radius: 8px;
+}
+.card-body .card-content{
+    display: flex;
+    justify-content:space-between ;
+}
+
+.card-content .card_tag{
+    /* border: 1px solid black; */
+    border-radius: 9px;
+    background: lightblue;
+    color: blueviolet;
+    /* margin: 6px; */
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.not_aval p{
+    background: antiquewhite;
+    color: red;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+}
+.card-content .locationicon{
+    width: 56px;
+    height: 20px;
+    color: brown;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.card-body .websites{
+    justify-content:flex-start;
+}

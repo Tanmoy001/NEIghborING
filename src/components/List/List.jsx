@@ -1,23 +1,37 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import PlaceDetails from '../PlaceDetails/PlaceDetails'
 import './List.css'
-function List({places}) {
-const [type,setType]=useState('restaurants')
-const [rating,setRating]=useState('All')
+import {getPlacesData} from '../../api/index'
+import {getAttractionssData} from '../../api/attractions'
+function List({coordinates,catagory}) {
 
+  const [places ,setPlaces] =useState([]);
+  const [rating,setRating]=useState('All')
+  console.log(catagory,'catagory list')
+  useEffect(()=>{
+    if(coordinates.lat!==1.5937){
+      if(catagory==='Foods & Hotels'){
+        getPlacesData(coordinates.lat,coordinates.lng)
+        .then((data)=>{
+          console.log(data)
+          setPlaces(data)
+        })
+        }
+      // if(catagory==='hotel'){
+        if(catagory==='Attractions'){
+      getAttractionssData(coordinates.lat,coordinates.lng)
+        .then((data)=>{
+          console.log(data)
+           setPlaces(data)
+        })
+      }
+        // }    
+    }
+},[coordinates,catagory]);  
   return (
     <div className='container List_content'>
-    <h3 className='slideInLeft'>Food and Dinner around you</h3>
+    <h3 className='slideInLeft'>{catagory} around you</h3>
     <div className='types'>
-    <form>
-       <h4>Type</h4>
-         <select value={type} onChange={(e)=>setType(e.target.value)}>
-              <option value="restaurants">Restaurants</option>
-              <option value="hotels">Hotels</option>
-              <option value="attractions">Attractions</option>
-         </select>
-         <span className="line"></span>
-    </form>
     <form className='rating'>
              <h4>Rating</h4>
             <select value={rating} onChange={(e)=>setRating(e.target.value)} >
@@ -30,9 +44,10 @@ const [rating,setRating]=useState('All')
     </form>
     </div>
     <div className='container place_details'>
-      {places?.map((places,i)=>(
+      {places?.map((place,i)=>(
         <div key={i}>
-          <PlaceDetails places={places}/> {/* props*/}
+          <PlaceDetails place={place} catagory={catagory}/>
+         
           </div>
       ))}
     </div>

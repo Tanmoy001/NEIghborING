@@ -4,13 +4,27 @@
     padding: 0;
     color: black;
     background: lightblue;
+    display: contents;
 
 }
 .header_position{
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr ;
+    grid-template-columns: 0.75fr 1.5fr  ;
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 4px;
 }
-
+.header_position .title{
+    border-right: 1px solid black;
+}
+.options{
+    display: flex;
+    gap: 10%;
+    text-align: center;
+     justify-content: center; 
+    align-items: center;
+    background: antiquewhite;
+}
 .header_position h3{
     font-family: cursive;
     font-size: 18px;
@@ -36,16 +50,19 @@
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 .header_position .search_bar{
-    background: antiquewhite;
-    margin: 8% 0%;
     display: flex;
     align-items: center;
+    gap: 6%;
 }
-.search_icon{
-    color: orangered;
-    padding: 10px;
+.logo{
+    color: brown;
+    height: 31px;
+    width: 31px;
+    
 }
-
+.search_bar p{
+        margin-bottom: 0rem;
+}
 .search_text{
     color: black;
     background: antiquewhite;
@@ -84,4 +101,32 @@
     transition: 0.5s;
     border-radius: 2px;
     pointer-events: none;
+}
+.options .option{
+    display: flex;
+    gap: 20%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.options .weather{
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    gap: 5%;
+    width: 38%;
+    justify-content: center;
+}
+.options .weather .temp{
+    display: flex;
+    gap: 5%;
+}
+.option .nav-link{
+    background: antiquewhite;
+    padding: 4px;
+    border-radius: 8px;
+}
+.option .nav-link:hover{
+color: burlywood;
 }

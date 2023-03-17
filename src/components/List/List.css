@@ -18,6 +18,10 @@
 .slideInLeft{
     animation: slideInLeft 1s ease-out;
 }
+.List_content{
+    border: 1px solid black;
+    border-radius: 4px;
+}
 .List_content h3{
     font-family: cursive;
     font-size: 18px;
@@ -26,19 +30,19 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    margin: 10px;
 }
 .List_content .types{
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-.types form{
-    width: 40%;
-}
+
 .types h4{
     font-family: cursive;
 }
 .types select{
+    margin-top: -4px;
     border: none;
     gap: 2rem;
     display: flex;
@@ -67,5 +71,14 @@ form select {
     margin-top:6px ;
 }
 .place_details{
-    margin-left: 8%;
+    box-sizing: border-box;
+    height: 38rem;
+    overflow: auto;
+}
+.types .rating{
+    display: flex;
+    gap: 22px;
+}
+.select{
+    margin-top: -4px;
 }

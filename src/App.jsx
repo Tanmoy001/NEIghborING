@@ -10,7 +10,6 @@ import'./App.css'
 function App() {
  
 const [coordinates,setCoordinates]=useState({lat:1.5937 ,lng:78.9629});
- const[catagory,setCatagory]=useState([])
 
   // useEffect(()=>{
   // navigator.geolocation.getCurrentPosition(({ coords:{latitude,longitude}})=>{

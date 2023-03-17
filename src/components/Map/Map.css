@@ -1,0 +1,16 @@
+.leaflet-popup-content-wrapper{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.leaflet-popup-content {
+    margin: 7px 9px 9px 6px;
+}
+
+element.style {
+    bottom: -2px;
+    left: -34px;
+}
+.leaflet-container{
+    height: 98vh;
+}
