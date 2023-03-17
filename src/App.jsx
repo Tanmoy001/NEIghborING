@@ -1,42 +1,66 @@
-import React,{useState ,useEffect} from "react";
-import Header from "./components/Header/Header.jsx";
+import React,{useState,useEffect} from "react";
+import Header from "./components/Header/Header";
 import List from "./components/List/List.jsx";
 import Map from "./components/Map/Map.jsx";
-import {getPlacesData} from './api/index'
-
+// import {getPlacesData} from './api/index'
+// import {getPlaceName} from './api/index'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import'./App.css'
 function App() {
-  const [places ,setPlaces] =useState([]);
-const [coordinates,setCoordinates]=useState({lat:23.5259613 ,lng:87.3341144 });
-const [bounds,setBounds]=useState(null);
-  useEffect(()=>{
-  navigator.geolocation.getCurrentPosition(({ coords:{latitude,longitude}})=>{
-    setCoordinates({lat:latitude,lng:longitude});
-  })
-  },[]);
+ 
+const [coordinates,setCoordinates]=useState({lat:1.5937 ,lng:78.9629});
+ const[catagory,setCatagory]=useState([])
 
-  useEffect(()=>{
-    console.log(coordinates,bounds);
-    getPlacesData(coordinates.lat,coordinates.lng)
-    .then((data)=>{
-      setPlaces(data)
+  // useEffect(()=>{
+  // navigator.geolocation.getCurrentPosition(({ coords:{latitude,longitude}})=>{
+  //   setCoordinates({lat:latitude,lng:longitude});
+    
+  // })
+  // },[]);
+
+ 
+
+  // useEffect(()=>{
+  //   getPlaceName(coordinates.lat,coordinates.lng)
+   
+  // },[coordinates])
+    useEffect(()=>{
+    navigator.geolocation.getCurrentPosition(({ coords:{latitude,longitude}})=>{
+      setCoordinates({lat:latitude,lng:longitude});
+      
     })
-  },[coordinates,bounds])
+    },[setCoordinates]);
   
   return (
    <>
-   <Header/>
+     <BrowserRouter>
+   <Header coordinates={coordinates} >{console.log(coordinates,'TO HEADER +5')}</Header>   
     <div className="main_body">
-      <List places={places}/> 
-      <Map
-      setCoordinates={setCoordinates}
-      setBounds={setBounds}
-      coordinates={coordinates}
-      /> 
+    <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <List coordinates={coordinates} key='restaurant'catagory='Foods & Hotels' /> }/>
+                
+            <Route
+              exact
+              path="/attractions"
+              
+              element={
+                
+                <List coordinates={coordinates} key="attractions" catagory='Attractions' /> }
+                />
+
+
+</Routes>
+      
+      <Map  coordinates={coordinates}/> 
+       
     </div>
 
-   
+    </BrowserRouter>
    </>
   );
 }
