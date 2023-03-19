@@ -51,7 +51,7 @@ useEffect(() => {
     <div className='container place_details'>
       {places?.map((place,i)=>(
         <div key={i}>
-          <PlaceDetails place={place} catagory={catagory}/>
+          <PlaceDetails place={place}id={i} catagory={catagory}/>
          
           </div>
       ))}

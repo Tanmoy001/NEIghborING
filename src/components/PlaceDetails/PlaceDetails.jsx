@@ -8,7 +8,7 @@ import { MdWebStories } from 'react-icons/md'
 import { useState } from 'react';
 
 
-const PlaceDetails = ({ place,catagory}) => {
+const PlaceDetails = ({ place,i,catagory}) => {
 
   // console.log(catagory,'catagory from placedetails')
   const [url, setUrl] = useState({})
@@ -21,7 +21,7 @@ const PlaceDetails = ({ place,catagory}) => {
     }
   },[catagory])
   return (
-    <div className='placeDetails'>
+    <div  className='placeDetails'>
         <div className="card" >
           <img className="card-img-top" style={{height:300}} src={place.photo ? place.photo.images.large.url:url} alt="...."/>
           <div className="card-body">
@@ -29,13 +29,15 @@ const PlaceDetails = ({ place,catagory}) => {
 
 
               <div className='card-content'>
-                <p>Rating</p>
+                <p style={{marginRight: "15px"}}>Rating</p>
+                <p className='ranking'>
                 {place.ranking?place.ranking:
                 ( <div className='not_aval'>
                 <p>Not Available</p>
                 </div>
                 )
                 }
+                </p>
               </div>
 
 
