@@ -130,3 +130,18 @@
 .option .nav-link:hover{
 color: burlywood;
 }
+@media only screen and (max-width: 873px)  {
+
+.weather{
+    font-size: 10px;
+}
+}
+@media only screen and (max-width: 622px)  {
+
+    .weather .condition{
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+    
+    }
