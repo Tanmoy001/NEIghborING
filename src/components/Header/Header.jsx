@@ -2,17 +2,19 @@ import React, { useEffect ,useState} from 'react'
 import './Header.css'
 import { TiWeatherPartlySunny } from 'react-icons/ti';
 import{getTempsData} from '../../api/weather'
-
+import BeatLoader from 'react-spinners/BeatLoader'
 import {
   Link
 } from "react-router-dom";
 
 
-function Header({coordinates}) {
+function Header({coordinates,}) {
   const [temp,setTemp]=useState([])
   const [timezone,settimezone]=useState([])
   const [condition,setcondition]=useState([])
+  const [loader, setLoader] = useState(false)
   useEffect(()=>{
+    setLoader(true)
     if(coordinates.lat!==1.5937){
     
     getTempsData(coordinates.lat,coordinates.lng)
@@ -21,7 +23,7 @@ function Header({coordinates}) {
       setcondition(data.currentConditions.conditions)
       settimezone(data.timezone);
       setTemp(data.currentConditions.temp);
-     
+      setLoader(false)
     })
   }
   },[coordinates]);     
@@ -37,6 +39,7 @@ function Header({coordinates}) {
               <Link className="nav-link" to="/">Foods</Link>
               <Link className="nav-link" to="/attractions">Attractions</Link>
             </div>
+            {loader?(<BeatLoader className='rotateloader'color={'#3189'}loading={loader} >{console.log(loader,"Loader")}</BeatLoader>):(
           <div className='weather'>
             <div className='temp'>
               <TiWeatherPartlySunny className='logo'/>
@@ -46,6 +49,7 @@ function Header({coordinates}) {
               <p className='condition'>{condition}</p>
               <p className='area'>{timezone}</p>
               </div>  
+            )}
         </div>
         </div>
     </div>

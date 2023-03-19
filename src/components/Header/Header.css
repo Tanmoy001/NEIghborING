@@ -150,6 +150,13 @@ color: burlywood;
     }
     
     }
+    .rotateloader{
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
     @media only screen and (max-width: 493px)  {
         .header_position h3 {
             font-size: 15px;

@@ -82,6 +82,13 @@ form select {
 .select{
     margin-top: -4px;
 }
+.rotateloader{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
 
 @media only screen and (max-width: 873px)  {
     .List_content {
