@@ -19,7 +19,7 @@ export const getAttractionssData = async (lat,lng)=>{
         }
       });
       
-   console.log(data,'from hotel api');
+  
       return data;
   } catch (error) {
       console.log(error);

@@ -7,13 +7,13 @@ function List({coordinates,catagory}) {
 
   const [places ,setPlaces] =useState([]);
   const [rating,setRating]=useState('All')
-  console.log(catagory,'catagory list')
+  // console.log(catagory,'catagory list')
   useEffect(()=>{
     if(coordinates.lat!==1.5937){
       if(catagory==='Foods & Hotels'){
         getPlacesData(coordinates.lat,coordinates.lng)
         .then((data)=>{
-          console.log(data)
+          // console.log(data)
           setPlaces(data)
         })
         }

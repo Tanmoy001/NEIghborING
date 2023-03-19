@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const PlaceDetails = ({ place,catagory}) => {
 
-  console.log(catagory,'catagory from placedetails')
+  // console.log(catagory,'catagory from placedetails')
   const [url, setUrl] = useState({})
   useEffect(()=>{
     if(catagory==='Attractions'){

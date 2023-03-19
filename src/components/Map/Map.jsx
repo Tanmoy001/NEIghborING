@@ -29,7 +29,7 @@ style={{width:'auto',height:'92vh'}}
       <Popup className='popup'>
        You
       </Popup>
-      {console.log("Map done")}
+      {/* {console.log("Map done")} */}
     </Marker>
 
 
