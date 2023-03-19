@@ -3,41 +3,54 @@ import PlaceDetails from '../PlaceDetails/PlaceDetails'
 import './List.css'
 import {getPlacesData} from '../../api/index'
 import {getAttractionssData} from '../../api/attractions'
+import BeatLoader from 'react-spinners/BeatLoader'
 function List({coordinates,catagory}) {
-
+  const [loader, setLoader] = useState(true)
   const [places ,setPlaces] =useState([]);
   const [rating,setRating]=useState('All')
   const [filteredPlaces, setFilteredPlaces] = useState([]);
-
+  
 
   useEffect(()=>{
+    setLoader(true);
     if(coordinates.lat!==1.5937){
       if(catagory==='Foods & Hotels'){
+        
         getPlacesData(coordinates.lat,coordinates.lng)
         .then((data)=>{
        
           setPlaces(data)
+          setLoader(false)
         })
+        
         }
       // if(catagory==='hotel'){
         if(catagory==='Attractions'){
+          
       getAttractionssData(coordinates.lat,coordinates.lng)
         .then((data)=>{
         
            setPlaces(data)
         })
+    
       }
         // }    
-    }
-},[coordinates,catagory]);  
+        
+        
+      }
+},[coordinates,catagory,setLoader]);  
 useEffect(() => {
   const filtered = places.filter((place) => Number(place.rating) > rating);
 
   setFilteredPlaces(filtered);
 }, [rating,places]);
+
+
   return (
     <div className='container List_content'>
     <h3 className='slideInLeft'>{catagory} around you</h3>
+      {loader?(<BeatLoader style={{height:'85vh'}}className='rotateloader'color={'#3189'}loading={loader} >{console.log(loader,"Loader")}</BeatLoader>):(
+        <>
     <div className='types'>
     <form className='rating'>
              <h4>Rating</h4>
@@ -50,6 +63,7 @@ useEffect(() => {
             <span className="line"></span>
     </form>
     </div>
+  
     <div className='container place_details'>
     {
     filteredPlaces.length ? 
@@ -68,7 +82,8 @@ useEffect(() => {
       )))
       }
     </div>
-    
+    </>
+    )}
 </div>
   )
 }
