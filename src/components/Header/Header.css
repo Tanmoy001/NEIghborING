@@ -14,16 +14,16 @@
     border: 1px solid black;
     border-radius: 4px;
 }
-.header_position .title{
+/* .header_position .title{
     border-right: 1px solid black;
-}
+} */
 .options{
     display: flex;
     gap: 10%;
     text-align: center;
      justify-content: center; 
     align-items: center;
-    background: antiquewhite;
+   
 }
 .header_position h3{
     font-family: cursive;
@@ -65,7 +65,7 @@
 }
 .search_text{
     color: black;
-    background: antiquewhite;
+   
     border: transparent;
     width: 70%;
 }
@@ -123,7 +123,7 @@
     gap: 5%;
 }
 .option .nav-link{
-    background: antiquewhite;
+   
     padding: 4px;
     border-radius: 8px;
 }
@@ -143,5 +143,28 @@ color: burlywood;
         visibility: hidden;
         display: none;
     }
+   .weather .temp .logo{
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
     
+    }
+    @media only screen and (max-width: 493px)  {
+        .header_position h3 {
+            font-size: 15px;
+        }
+        .option a{
+            font-size: 13px;
+        }
+    }
+    @media only screen and (max-width: 400px)  {
+        .area{
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+        }
+        .header_position h3 {
+            font-size: 13px;
+        }
     }
