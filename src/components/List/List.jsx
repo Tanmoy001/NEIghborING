@@ -7,13 +7,15 @@ function List({coordinates,catagory}) {
 
   const [places ,setPlaces] =useState([]);
   const [rating,setRating]=useState('All')
-  // console.log(catagory,'catagory list')
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
+
+
   useEffect(()=>{
     if(coordinates.lat!==1.5937){
       if(catagory==='Foods & Hotels'){
         getPlacesData(coordinates.lat,coordinates.lng)
         .then((data)=>{
-          // console.log(data)
+       
           setPlaces(data)
         })
         }
@@ -21,7 +23,7 @@ function List({coordinates,catagory}) {
         if(catagory==='Attractions'){
       getAttractionssData(coordinates.lat,coordinates.lng)
         .then((data)=>{
-          console.log(data)
+        
            setPlaces(data)
         })
       }
@@ -31,8 +33,8 @@ function List({coordinates,catagory}) {
 useEffect(() => {
   const filtered = places.filter((place) => Number(place.rating) > rating);
 
-  setPlaces(filtered);
-}, [rating]);
+  setFilteredPlaces(filtered);
+}, [rating,places]);
   return (
     <div className='container List_content'>
     <h3 className='slideInLeft'>{catagory} around you</h3>
@@ -49,12 +51,22 @@ useEffect(() => {
     </form>
     </div>
     <div className='container place_details'>
-      {places?.map((place,i)=>(
+    {
+    filteredPlaces.length ? 
+    (filteredPlaces?.map((place,i)=>(
+      <div key={i}>
+        <PlaceDetails place={place} catagory={catagory}/>
+       
+        </div>
+    )))
+    : 
+      (places?.map((place,i)=>(
         <div key={i}>
-          <PlaceDetails place={place}id={i} catagory={catagory}/>
+          <PlaceDetails place={place} catagory={catagory}/>
          
           </div>
-      ))}
+      )))
+      }
     </div>
     
 </div>

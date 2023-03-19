@@ -14,10 +14,10 @@ function Header({coordinates}) {
   const [condition,setcondition]=useState([])
   useEffect(()=>{
     if(coordinates.lat!==1.5937){
-    // console.log(coordinates,'from header')
+    
     getTempsData(coordinates.lat,coordinates.lng)
     .then((data)=>{
-      // console.log(data)
+    
       setcondition(data.currentConditions.conditions)
       settimezone(data.timezone);
       setTemp(data.currentConditions.temp);

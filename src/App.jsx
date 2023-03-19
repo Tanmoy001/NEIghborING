@@ -34,7 +34,7 @@ const [coordinates,setCoordinates]=useState({lat:1.5937 ,lng:78.9629});
   return (
    <>
      <BrowserRouter>
-   <Header coordinates={coordinates} />
+   <Header coordinates={coordinates} />   
     <div className="main_body">
     <Routes>
             <Route
