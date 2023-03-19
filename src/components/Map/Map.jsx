@@ -14,7 +14,7 @@ function Map({coordinates}) {
 
 center={coordinates}
 zoom={1.5}
-style={{width:'auto',height:'88vh'}}
+style={{width:'auto',height:'92vh'}}
 
 
 

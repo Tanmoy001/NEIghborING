@@ -1,4 +1,13 @@
+*{
+  background: antiquewhite;
+}
 .main_body{
   display: grid;
   grid-template-columns: 1fr 2fr;
+}
+@media only screen and (max-width: 873px)  {
+  .main_body{
+    background: antiquewhite;
+    display: block;
+  }
 }

@@ -28,6 +28,11 @@ function List({coordinates,catagory}) {
         // }    
     }
 },[coordinates,catagory]);  
+useEffect(() => {
+  const filtered = places.filter((place) => Number(place.rating) > rating);
+
+  setPlaces(filtered);
+}, [rating]);
   return (
     <div className='container List_content'>
     <h3 className='slideInLeft'>{catagory} around you</h3>
@@ -35,10 +40,10 @@ function List({coordinates,catagory}) {
     <form className='rating'>
              <h4>Rating</h4>
             <select value={rating} onChange={(e)=>setRating(e.target.value)} >
-              <option value={0}>All</option>
-              <option value={3}>Above 3.0</option>
-              <option value={4}>Above 4.0</option>
-              <option value={4.5}>Above 4.5</option>
+              <option value="">All</option>
+              <option value="3">Above 3.0</option>
+              <option value="4">Above 4.0</option>
+              <option value="4.5">Above 4.5</option>
             </select>
             <span className="line"></span>
     </form>

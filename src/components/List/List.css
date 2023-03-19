@@ -82,3 +82,20 @@ form select {
 .select{
     margin-top: -4px;
 }
+
+@media only screen and (max-width: 873px)  {
+    .List_content {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    .List_content{
+        border: none;
+    }
+  }
+  
+@media only screen and (max-width: 686px)  {
+    .List_content {
+        
+        width: 90%;
+    }
+  }

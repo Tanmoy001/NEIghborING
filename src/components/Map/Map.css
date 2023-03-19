@@ -12,5 +12,15 @@ element.style {
     left: -34px;
 }
 .leaflet-container{
-    height: 98vh;
+    height: 100vh;
 }
+@media only screen and (max-width: 873px)  {
+    .leaflet-container{
+        width: auto;
+        height: 67vh;
+        margin-bottom: 0;
+        background: aquamarine;
+        position: relative;
+        margin: 7%;
+    }
+  }

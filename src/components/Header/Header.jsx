@@ -43,7 +43,7 @@ function Header({coordinates}) {
               <p>{temp}°F</p>
               </div>  
 
-              <p>{condition}</p>
+              <p className='condition'>{condition}</p>
               <p>{timezone}</p>
               </div>  
         </div>
