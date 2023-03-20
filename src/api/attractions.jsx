@@ -19,7 +19,7 @@ export const getAttractionssData = async (lat,lng)=>{
         }
       });
       
-  
+ 
       return data;
   } catch (error) {
       console.log(error);
