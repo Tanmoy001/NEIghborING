@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import Header from "./components/Header/Header";
 import List from "./components/List/List.jsx";
 import Map from "./components/Map/Map.jsx";
+import Footer from "./components/footer/Footer.jsx";
 // import {getPlacesData} from './api/index'
 // import {getPlaceName} from './api/index'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -62,7 +63,7 @@ const [coordinates,setCoordinates]=useState({lat:1.5937 ,lng:78.9629});
       <Map  coordinates={coordinates}/> 
        
     </div>
-
+<Footer/>
     </BrowserRouter>
    </>
   );

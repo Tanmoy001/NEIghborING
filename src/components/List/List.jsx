@@ -31,6 +31,7 @@ function List({coordinates,catagory}) {
         .then((data)=>{
         
            setPlaces(data)
+           setLoader(false)
         })
     
       }
