@@ -18,7 +18,7 @@ export const getPlacesData = async (lat,lng)=>{
         }
       });
       
-   
+
       return data;
   } catch (error) {
       console.log(error);

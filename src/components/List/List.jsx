@@ -50,7 +50,7 @@ useEffect(() => {
   return (
     <div className='container List_content'>
     <h3 className='slideInLeft'>{catagory} around you</h3>
-      {loader?(<BeatLoader style={{height:'85vh'}}className='rotateloader'color={'#3189'}loading={loader} >{console.log(loader,"Loader")}</BeatLoader>):(
+      {loader?(<BeatLoader style={{height:'85vh'}}className='rotateloader'color={'#3189'}loading={loader} />):(
         <>
     <div className='types'>
     <form className='rating'>

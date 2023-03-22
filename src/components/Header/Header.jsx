@@ -39,7 +39,7 @@ function Header({coordinates,}) {
               <Link className="nav-link" to="/">Foods</Link>
               <Link className="nav-link" to="/attractions">Attractions</Link>
             </div>
-            {loader?(<BeatLoader className='rotateloader'color={'#3189'}loading={loader} >{console.log(loader,"Loader")}</BeatLoader>):(
+            {loader?(<BeatLoader className='rotateloader'color={'#3189'}loading={loader} />):(
           <div className='weather'>
             <div className='temp'>
               <TiWeatherPartlySunny className='logo'/>
