@@ -18,6 +18,12 @@
 /* .header_position .title{
     border-right: 1px solid black;
 } */
+.card-body h5{
+    font-family: cursive;
+}
+.card-content p{
+    font-family: cursive;
+}
 .options{
     display: flex;
     gap: 10%;
