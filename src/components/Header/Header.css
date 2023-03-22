@@ -10,7 +10,8 @@
 .header_position{
     display: grid;
     grid-template-columns: 0.75fr 1.5fr  ;
-    background-color: lightblue;
+    background-color: deepskyblue;
+    color: aliceblue;
     border: 1px solid black;
     border-radius: 4px;
 }
