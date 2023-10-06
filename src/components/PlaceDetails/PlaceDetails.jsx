@@ -71,9 +71,10 @@ const PlaceDetails = ({ place,i,catagory}) => {
       <MdWebStories className='locationicon'/>
       <p>Trip advisor</p>
       </div>
+      <MdWebStories className='locationicon'/>
       {place.website?(
       <div style={{display:'flex'}} onClick={()=> window.open(place.website,'_blank')}>
-      <MdWebStories className='locationicon'/>
+     
       <p>Website</p>
       </div>)
       :

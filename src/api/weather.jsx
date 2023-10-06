@@ -15,4 +15,17 @@ export const getTempsData = async (lat,lng)=>{
         
     }
   }
+
+  export const getCordi = async (area)=>{
+    try {
+        const URL= `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${area}?key=23FF36AZPE75SCTYHUPXH5U6U`;
+        
+        const data = await axios.get(URL);
+        
+        return data.data;
+    } catch (error) {
+        console.log(error);
+        
+    }
+  }
   

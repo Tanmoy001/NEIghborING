@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 .List_content{
     
@@ -5,6 +6,26 @@
     color: black;
     background-color: antiquewhite;
 
+}
+.listcontent{
+    margin: 1rem;
+    background: rgb(255,255,255,255);
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,.05), 25px 35px 20px rgba(0,0,0,.05);
+    border-radius: 2rem;
+    border-top: 1px solid black;
+    border-style: inherit;
+}
+.types select{
+    background-color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    border-radius: 1rem;
+    padding-left: 3px;
+    padding-right: 3px;
+    justify-content: center;
+    display: flex;
+    outline: none;
+    margin-bottom:20px;
 }
 @keyframes slideInLeft {
     from{
@@ -41,13 +62,7 @@
 .types h4{
     font-family: cursive;
 }
-.types select{
-    margin-top: -4px;
-    border: none;
-    gap: 2rem;
-    display: flex;
 
-}
 
 .types form .line{
     margin-bottom: 7px;
@@ -61,18 +76,12 @@
     border-radius: 2px;
     pointer-events: none;
 }
-select{
-    background: antiquewhite;
-    border-radius: none;
-    outline: none;
-
-}
 form select {
     margin-top:6px ;
 }
 .place_details{
     box-sizing: border-box;
-    height: 38rem;
+    height: 32rem;
     overflow: auto;
 }
 .types .rating{

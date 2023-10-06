@@ -18,7 +18,7 @@ function List({coordinates,catagory}) {
         
         getPlacesData(coordinates.lat,coordinates.lng)
         .then((data)=>{
-       
+          
           setPlaces(data)
           setLoader(false)
         })
@@ -49,13 +49,13 @@ useEffect(() => {
 
   return (
     <div className='container List_content'>
+      <div className='listcontent'>
     <h3 className='slideInLeft'>{catagory} around you</h3>
-      {loader?(<BeatLoader style={{height:'85vh'}}className='rotateloader'color={'#3189'}loading={loader} />):(
-        <>
+     
     <div className='types'>
     <form className='rating'>
              <h4>Rating</h4>
-            <select value={rating} onChange={(e)=>setRating(e.target.value)} >
+            <select className='selectoption' value={rating} onChange={(e)=>setRating(e.target.value)} >
               <option value="">All</option>
               <option value="3">Above 3.0</option>
               <option value="4">Above 4.0</option>
@@ -64,7 +64,9 @@ useEffect(() => {
             <span className="line"></span>
     </form>
     </div>
-  
+    </div>
+    {loader?(<BeatLoader style={{height:'85vh'}}className='rotateloader'color={'#3189'}loading={loader} />):(
+        <>
     <div className='container place_details'>
     {
     filteredPlaces.length ? 
