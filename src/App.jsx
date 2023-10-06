@@ -17,11 +17,15 @@ const [locationPermission, setLocationPermission] = useState("null");
        navigator.permissions.query({name:"geolocation"}).then((result)=>{
          setLocationPermission(result.state);
        })
-      
+      if(locationPermission==='granted'){
     navigator.geolocation.getCurrentPosition(({ coords:{latitude,longitude}})=>{
       setCoordinates({lat:latitude,lng:longitude});
       
     })
+    }
+    else{
+      setCoordinates({lat:20.5937,lng:78.9629});
+    }
     console.log(locationPermission)
     },[setCoordinates,locationPermission]);
   
