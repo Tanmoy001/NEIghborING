@@ -118,7 +118,7 @@ function Home({coordinates}) {
           <CiTempHigh/>
         </div>
         <div className='temperature'>
-          <h1>{temp}</h1>
+          <h1>{temp}°F</h1>
           </div>
       </div>
       <div className='home_section_three'>

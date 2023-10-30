@@ -11,3 +11,25 @@
     display: block;
   }
 }
+.moving-text-container {
+  width: 100%; /* Adjust width as needed */
+  overflow: hidden;
+  color: red;
+}
+
+.moving-text {
+  
+  font-size: medium;
+  white-space: nowrap;
+  position: relative;
+  animation: move-text 20s linear infinite; /* Adjust the animation duration as needed */
+}
+
+@keyframes move-text {
+  from {
+    left: 0; /* Starting position */
+  }
+  to {
+    left: 100%; /* Move to the right edge of the container */
+  }
+}

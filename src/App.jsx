@@ -32,6 +32,10 @@ const [locationPermission, setLocationPermission] = useState("null");
   return (
    <>
     <BrowserRouter>
+    <div className="moving-text-container">
+    <a  href="/" download className='moving-text btn'>Your NEIghborING is now available on app .Click here to DOWNLOAD it now .</a>
+        {/* <div className="moving-text">Your NEIghborING is now available on app . Download it now .</div> */}
+      </div>
     
     <Header setCoordinates={setCoordinates} />   
     <div className="main_body">
