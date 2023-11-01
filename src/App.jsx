@@ -33,7 +33,7 @@ const [locationPermission, setLocationPermission] = useState("null");
    <>
     <BrowserRouter>
     <div className="moving-text-container">
-    <a  href="/" download className='moving-text btn'>Your NEIghborING is now available on app .Click here to DOWNLOAD it now .</a>
+    <a  href="https://drive.google.com/file/d/1ztU_nGDg_Sz3Spvy0v7adjOm7chHM4kM/view?usp=sharing" target={'_blank'}rel="noreferrer"  className='moving-text btn'>Your NEIghborING is now available on app .Click here to DOWNLOAD it now .</a>
         {/* <div className="moving-text">Your NEIghborING is now available on app . Download it now .</div> */}
       </div>
     
